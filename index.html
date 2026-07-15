@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Storefront — Wishlist Demo</title>
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <h1>🛒 Simple Storefront</h1>
+    <p class="subtitle">Add products to Wishlist A or B, then merge them into one!</p>
+  </header>
+
+  <!-- Shown only if saving to localStorage ever fails (e.g. storage
+       disabled or full), so the user knows their changes may not
+       be saved after a refresh. Hidden by default. -->
+  <div id="storage-warning" class="storage-warning" role="alert" hidden>
+    ⚠️ Your changes couldn't be saved to this browser's storage. They may be lost after a refresh.
+  </div>
+
+  <main>
+
+    <!-- ===================== PRODUCT CATALOG ===================== -->
+    <section class="products-section">
+      <h2>Products</h2>
+      <!-- Product cards are generated dynamically by script.js
+           into this container (id="product-list") -->
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <!-- ===================== WISHLISTS ===================== -->
+    <section class="wishlists-section">
+
+      <h2>Wishlists</h2>
+
+      <!-- Merge control -->
+      <div class="merge-controls">
+        <button
+          type="button"
+          id="merge-btn"
+          class="merge-btn"
+          aria-label="Merge Wishlist A and Wishlist B into the Merged Wishlist"
+        >
+          🔀 Merge Wishlist A + Wishlist B
+        </button>
+        <p class="merge-hint">
+          The Merged Wishlist is a snapshot from the last time you clicked Merge —
+          add or remove items above, then click Merge again to update it.
+        </p>
+      </div>
+
+      <div class="wishlist-grid">
+
+        <!-- Wishlist A -->
+        <div class="wishlist-column">
+          <h3>Wishlist A</h3>
+          <ul id="wishlist-a-list" class="wishlist-list" aria-live="polite"></ul>
+        </div>
+
+        <!-- Wishlist B -->
+        <div class="wishlist-column">
+          <h3>Wishlist B</h3>
+          <ul id="wishlist-b-list" class="wishlist-list" aria-live="polite"></ul>
+        </div>
+
+        <!-- Merged Wishlist (result of merging A + B) -->
+        <div class="wishlist-column merged-column">
+          <h3>Merged Wishlist</h3>
+          <ul id="wishlist-merged-list" class="wishlist-list" aria-live="polite"></ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with plain HTML, CSS &amp; JavaScript — no frameworks, no build step.</p>
+  </footer>
+
+  <!-- Our JavaScript logic (loaded last so the DOM exists first) -->
+  <script src="script.js"></script>
+</body>
+</html>
