@@ -5,7 +5,7 @@ A lightweight, static e-commerce storefront built with **plain HTML, CSS, and Ja
 
 Designed to be deployed as-is on **GitHub Pages** or any static host.
 
-**[🔗 Live Demo](#)** — *(replace with your GitHub Pages URL after deployment)*
+**[🔗 Live Demo](#)** — https://github.com/vigneshwaranB14/Ecommerce-Wishlist/blob/main/index.html
 
 ---
 
